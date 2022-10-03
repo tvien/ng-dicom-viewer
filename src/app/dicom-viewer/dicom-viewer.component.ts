@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-import { CornerstoneCoreService } from './cornerstone/cornerstone-core.service';
-import { DicomParserService } from './cornerstone/dicom-parser.service';
-import { WadoImageLoaderService } from './cornerstone/wado-image-loader.service';
+import { DicomViewerService } from './dicom-viewer.service';
 
 @Component({
   selector: 'app-dicom-viewer',
@@ -10,10 +7,7 @@ import { WadoImageLoaderService } from './cornerstone/wado-image-loader.service'
   styleUrls: ['./dicom-viewer.component.scss'],
 })
 export class DicomViewerComponent implements OnInit {
-  constructor(
-    private dpService: DicomParserService,
-    private wadoImageLoader: WadoImageLoaderService
-  ) {}
+  constructor(private dvs: DicomViewerService) {}
 
   ngOnInit(): void {}
 }

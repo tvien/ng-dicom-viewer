@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DicomParserService } from './dicom-parser.service';
+import { DicomViewerService } from './dicom-viewer.service';
 
-describe('DicomParserService', () => {
-  let service: DicomParserService;
+describe('DicomViewerService', () => {
+  let service: DicomViewerService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(DicomParserService);
+    service = TestBed.inject(DicomViewerService);
   });
 
   it('should be created', () => {
