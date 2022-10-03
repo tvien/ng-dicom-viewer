@@ -1,7 +1,6 @@
 import { ElementRef, Injectable } from '@angular/core';
 
-import { Image } from 'cornerstone-core';
-import * as cs from 'cornerstone-core';
+import cs, { Image } from 'cornerstone-core';
 import * as dp from 'dicom-parser';
 
 const imageLoader = require('cornerstone-wado-image-loader');
@@ -10,9 +9,9 @@ const imageLoader = require('cornerstone-wado-image-loader');
   providedIn: 'root',
 })
 export class DicomViewerService {
-  private cornerstone: any;
-  private dicomParser: any;
-  private imageLoader: any;
+  private cornerstone;
+  private dicomParser;
+  private imageLoader;
 
   constructor() {
     this.cornerstone = cs;
@@ -30,7 +29,7 @@ export class DicomViewerService {
 
   // this UI is only built for a single file so just dump the first one
   loadDicomImage(dcmFile: File, element: HTMLElement): Promise<Image> {
-    // TODO: these added files will probably need to be removed when a new file is requested
+    // *TODO: these added files will probably need to be removed when a new file is requested
     const imageId = this.imageLoader.wadouri.fileManager.add(dcmFile);
 
     this.cornerstone.enable(element);
